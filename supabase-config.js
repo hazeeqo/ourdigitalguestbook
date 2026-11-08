@@ -4,6 +4,6 @@
  * Never paste a secret/service_role key into this file.
  */
 window.GUESTBOOK_SUPABASE = {
-  url: "",
-  publishableKey: ""
+  url: "https://uhwqsiabjhgmbtgxrkxg.supabase.co",
+  publishableKey: "sb_publishable_ddmqfT0r__i5jHR9nQ70FA_IJqAfQz_"
 };
