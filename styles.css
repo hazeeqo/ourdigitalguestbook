@@ -322,3 +322,44 @@ footer{color:#85745c;border-color:#d1c1a2}
  body:after{background:#eee6d7}
  .nav{color:#75664f}.nav.active{color:#a74929}
 }
+
+/* Guest camera: compact disposable-camera viewfinder and clear input text. */
+header{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center}
+header .brand{justify-self:start}
+header nav{justify-self:center}
+header .film-mark{justify-self:end}
+.guest-fields .input{background:#fbf6ea!important;color:#30271d!important;border-color:#cbbb9e;caret-color:#30271d}
+.guest-fields .input::placeholder{color:#75654f!important;opacity:1}
+.camera-card .drop #empty{width:100%;height:100%;padding:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.viewfinder-screen{position:relative;width:min(100%,420px);height:clamp(190px,31vh,300px);min-height:190px;overflow:hidden;border:1px solid #786d55;border-radius:5px;background:radial-gradient(ellipse at center,#252820 0,#111310 64%,#090a09 100%);box-shadow:inset 0 0 36px #000,0 2px 0 #a99b7a;display:grid;place-items:center;color:#f3e8cf}
+.viewfinder-screen:before{content:"";position:absolute;inset:12px;border:1px solid #e8dec51c;pointer-events:none}
+.screen-mark,.screen-count{position:absolute;top:15px;font:9px "Special Elite",monospace;color:#e8cf9d;letter-spacing:1px}
+.screen-mark{left:18px}.screen-count{right:18px;top:auto;bottom:15px}
+.screen-cross{position:absolute;color:#fff6d4aa;font:16px sans-serif;font-weight:200}
+.screen-copy{position:absolute;left:12px;right:12px;bottom:40px;text-align:center;animation:invite-float 2.3s ease-in-out infinite}
+.screen-copy small{display:block;font:8px "Special Elite",monospace;letter-spacing:1.4px;color:#e1a46d;margin-bottom:7px}
+.screen-copy strong{font:500 clamp(20px,5vw,26px)/1.08 var(--serif);color:#f4ead7}
+@keyframes invite-float{0%,100%{transform:translateY(2px)}50%{transform:translateY(-4px)}}
+.camera-controls{position:relative;width:min(100%,420px);height:62px;display:flex;align-items:center;justify-content:center}
+.camera-control{width:39px;height:39px;border:1px solid #a99878;border-radius:50%;background:#e9dfcb;color:#51432e;font-size:22px;display:grid;place-items:center;cursor:pointer}
+.flip-control{position:absolute;left:13%;font-size:24px}
+.upload-control{position:absolute;right:13%;font-size:17px;border-radius:11px;width:43px}
+.control-caption,.upload-caption{position:absolute;top:-1px;font:7px "Special Elite",monospace;letter-spacing:.6px;color:#c5b696}
+.control-caption{left:8%}.upload-caption{right:9%}
+.shutter.home-shutter{width:58px;height:58px;border:4px solid #e9dfcb;background:#282c24;box-shadow:0 2px 7px #0005;cursor:pointer}
+.shutter.home-shutter i{width:42px;height:42px;background:#b84d27;transition:transform .15s,background .15s}
+.shutter.home-shutter:active i{transform:scale(.88);background:#d56438}
+.camera-hint{font:8px "Special Elite",monospace;color:#bdaf95;letter-spacing:.3px;text-align:center}
+.camactions{display:flex;align-items:center;justify-content:center;gap:18px}
+.camactions .camera-control{background:#f5eddd}
+@media(max-width:720px){
+ header{display:flex}
+ header nav{display:contents}
+ header .film-mark{display:none}
+ .camera-card .drop{height:auto;min-height:clamp(295px,43vh,420px);padding:8px}
+ .camera-card .drop #empty{padding:7px;gap:8px}
+ .viewfinder-screen{height:clamp(190px,29vh,290px);min-height:190px}
+ .camera-controls{height:59px}
+ .control-caption,.upload-caption{font-size:6px}
+ .guest-fields .input{background:#fbf6ea!important;color:#30271d!important}
+}
